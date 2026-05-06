@@ -1,8 +1,12 @@
 import { describe, it, expect } from "vitest";
+import { render, screen } from "@testing-library/react"
+import App from "./App";
 
-describe('something truthy and falsy', () => {
+describe('App component', () => {
 
-    it('true to be true', () => {
-        expect(true).toBe(true)
+    it('Render correct heading', () => {
+        render(<App />)
+        expect(screen.getByRole("heading").textContent).toMatch(/our first test/i)
     })
+
 })
